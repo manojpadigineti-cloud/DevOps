@@ -1,6 +1,9 @@
 # Local .terraform directories
 .terraform/
 
+# GCP keys
+*.json
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
