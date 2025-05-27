@@ -1,0 +1,18 @@
+resource "google_compute_instance" "compute" {
+  name         = var.vm_name
+  machine_type = var.machine_type
+  zone         = var.zone
+
+  network_interface {
+    network = var.vpc_name
+  }
+
+  boot_disk {
+    initialize_params {
+      image = var.image_name
+      labels = {
+        "Name" = var.vm_name
+      }
+    }
+  }
+}
