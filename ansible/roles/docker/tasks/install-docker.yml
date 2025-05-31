@@ -3,5 +3,3 @@
     name: dnf-module
     tasks_from: main.yml
   become: true
-
-#- name: Full permissions to docker sock
