@@ -116,6 +116,7 @@
     regexp: "RUN_AS_USER=sonar"  # Ensure the sonar user is used to run the service
     insertafter: "#RUN_AS_USER="  # Insert after the commented-out line
     line: "RUN_AS_USER=sonar"  # Enable running as sonar user
+  become: true
 
 # Copy the Sonar service configuration file to the server
 - name: Copy Startup Service Script to Remote Server
