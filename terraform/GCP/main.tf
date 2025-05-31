@@ -43,4 +43,3 @@ module "provisioner" {
   run_server   = each.value.vm_name
   ssh_password = var.password
 }
-
