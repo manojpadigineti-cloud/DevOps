@@ -23,21 +23,21 @@ subnets = {
 }
 
 public_compute = {
-  jenkins-server = {
+  jenkins-master = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
     machine_type = "e2-standard-2"
     vm_name = "jenkins-master"
     vpc_name = "i27ecommerce"
     zone = "us-central1-a"
   }
-  docker-server = {
+  docker = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
     machine_type = "e2-standard-2"
     vm_name = "docker"
     vpc_name = "i27ecommerce"
     zone = "us-central1-b"
   }
-  jenkins-slave-server = {
+  jenkins-slave = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
     machine_type = "e2-standard-2"
     vm_name = "jenkins-slave"

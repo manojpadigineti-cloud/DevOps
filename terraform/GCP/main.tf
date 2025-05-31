@@ -37,9 +37,10 @@ module "local_file" {
 }
 
 module "provisioner" {
+  depends_on = [module.compute]
   for_each = var.public_compute
   source = "./modules/provisioner"
-  remote_host  = module.compute[each.value.vm_name].compute_public_ip
+  remote_host  = module.compute[each.key].compute_public_ip
   run_server   = each.value.vm_name
   ssh_password = var.password
 }
