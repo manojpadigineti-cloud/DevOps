@@ -1,5 +1,5 @@
 dnf_modules:
   - "java-21-openjdk"
   - "jenkins"
-systemd-service:
+systemd_service:
   - "jenkins"

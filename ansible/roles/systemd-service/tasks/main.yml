@@ -1,6 +1,6 @@
-- name: restart {{ systemd-service }} service
+- name: restart {{ systemd_service }} service
   ansible.builtin.systemd_service:
     name: "{{ item }}"
     state: reloaded
     enabled: true
-  loop: "{{ systemd-service }}"
+  loop: "{{ systemd_service }}"

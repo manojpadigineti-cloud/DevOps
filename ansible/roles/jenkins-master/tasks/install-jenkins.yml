@@ -17,7 +17,7 @@
     tasks_from: main.yml
   become: true
 
-- name: install "{{ systemd-service }}"
+- name: install "{{ systemd_service }}"
   ansible.builtin.import_role:
     name: systemd-service
     tasks_from: main.yml
