@@ -12,12 +12,12 @@ subnets = {
   }
   i27-subnet-2 = {
     subnet_cidr = "10.2.0.0/16"
-    subnet_name = "i27-private-subnet-2"
+    subnet_name = "i27-public-subnet-2"
     subnet_region = "us-central1"
   }
   i27-subnet-3 = {
   subnet_cidr = "10.3.0.0/16"
-  subnet_name = "i27-private-subnet-3"
+  subnet_name = "i27-public-subnet-3"
   subnet_region = "us-central1"
  }
 }
@@ -29,6 +29,7 @@ public_compute = {
     vm_name = "masterjenkins"
     vpc_name = "i27ecommerce"
     zone = "us-central1-a"
+    subnet = "i27-public-subnet-1"
   }
   docker = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
@@ -36,6 +37,7 @@ public_compute = {
     vm_name = "docker"
     vpc_name = "i27ecommerce"
     zone = "us-central1-b"
+    subnet = "i27-public-subnet-2"
   }
   workerjenkins = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
@@ -43,8 +45,21 @@ public_compute = {
     vm_name = "workerjenkins"
     vpc_name = "i27ecommerce"
     zone = "us-central1-c"
+    subnet = "i27-public-subnet-3"
   }
 }
 
+firewalls = {
+  firewallone = {
+    firewall_name = "i27ecommerce-fw"
+    vpc_name      = "i27ecommerce"
+    firewall_ports = {
+      ssh = {
+        source_cidr_range = ["0.0.0.0/0"]
+        protocol = "tcp"
+        ports = ["22"]
+      }
+    }
+  }
 
-
+}

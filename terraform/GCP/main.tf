@@ -13,12 +13,20 @@ module "subnets" {
   vpc_id        = module.vpc["i27ecommerce"].vpc_id
 }
 
+module "firewall" {
+  for_each = var.firewalls
+  source = "./modules/firewall"
+  firewall_name     = each.value.firewall_name
+  vpc_name          = each.value.vpc_name
+  firewall_ports = each.value.firewall_ports
+}
+
 module "tls_keys" {
   source = "./modules/ssh_keys"
 }
 
 module "compute" {
-  depends_on = [module.tls_keys]
+  depends_on = [module.tls_keys, module.subnets, module.firewall]
   for_each = var.public_compute
   source = "./modules/public_compute"
   image_name   = each.value.image_name
@@ -28,6 +36,7 @@ module "compute" {
   zone         = each.value.zone
   private_key = module.tls_keys.rsa_private_key
   public_key = module.tls_keys.rsa_public_key
+  subnet = each.value.subnet
 }
 
 module "local_file" {

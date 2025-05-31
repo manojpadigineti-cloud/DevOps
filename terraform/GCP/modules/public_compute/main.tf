@@ -5,6 +5,7 @@ resource "google_compute_instance" "compute" {
 
   network_interface {
     network = var.vpc_name
+    subnetwork = var.subnet
 
     access_config {
       // Ephemeral public IP
@@ -16,7 +17,7 @@ resource "google_compute_instance" "compute" {
     initialize_params {
       image = var.image_name
       labels = {
-        "Name" = var.vm_name
+        "name" = var.vm_name
       }
     }
   }

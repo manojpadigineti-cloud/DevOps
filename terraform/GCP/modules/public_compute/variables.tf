@@ -5,3 +5,4 @@ variable "vpc_name" {}
 variable "image_name" {}
 variable "private_key" {}
 variable "public_key" {}
+variable "subnet" {}

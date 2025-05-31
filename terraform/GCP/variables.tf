@@ -19,9 +19,22 @@ variable "public_compute" {
     vm_name = string
     vpc_name = string
     zone = string
+    subnet = string
   }))
 }
 
 variable "password" {
   default = "Manoj@9999"
+}
+
+variable "firewalls" {
+  type = map(object({
+    firewall_name = string
+    vpc_name = string
+    firewall_ports = map(object({
+       source_cidr_range = list(string)
+       protocol = string
+       ports = list(string)
+    }))
+  }))
 }

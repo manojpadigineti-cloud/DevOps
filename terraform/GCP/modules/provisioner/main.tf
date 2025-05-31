@@ -1,7 +1,7 @@
 resource "null_resource" "provisioner" {
   connection {
     type     = "ssh"
-    user     = "docker"
+    user     = "devops"
     password = var.ssh_password
     host     = var.remote_host
   }
