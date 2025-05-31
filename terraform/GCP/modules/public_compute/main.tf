@@ -20,4 +20,8 @@ resource "google_compute_instance" "compute" {
       }
     }
   }
+    metadata = {
+    ssh-keys = var.private_key
+    ssh-keys = var.public_key
+  }
 }

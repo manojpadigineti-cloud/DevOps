@@ -14,10 +14,20 @@ variable "subnets" {
 
 variable "public_compute" {
   type = map(object({
-    image_name = ""
-    machine_type = ""
-    vm_name = ""
-    vpc_name = ""
-    zone = ""
+    image_name = string
+    machine_type = string
+    vm_name = string
+    vpc_name = string
+    zone = string
+  }))
+}
+
+variable "private_compute" {
+  type = map(object({
+    image_name = string
+    machine_type = string
+    vm_name = string
+    vpc_name = string
+    zone = string
   }))
 }

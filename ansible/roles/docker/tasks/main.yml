@@ -1,0 +1,1 @@
+- include: ansible/roles/docker/tasks/install-docker.yml
