@@ -1,1 +1,3 @@
-- include: ansible/roles/docker/tasks/install-docker.yml
+# roles/docker/tasks/main.yml
+- name: Include Docker installation steps
+  import_tasks: install-docker.yml
