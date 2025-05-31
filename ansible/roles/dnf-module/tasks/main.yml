@@ -3,3 +3,4 @@
     name: "{{ item }}"
     state: present
   loop: "{{ dnf_modules }}"
+  become: true
