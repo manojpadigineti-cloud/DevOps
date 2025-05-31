@@ -38,6 +38,7 @@
     src: https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
     dest: /opt/  # Destination for Maven installation
     copy: no  # No need to retain the archive
+  become: true
 
 # Download and install SonarQube 9.7.1
 - name: Install and configure Sonar
@@ -45,6 +46,7 @@
     src: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.7.1.62043.zip
     dest: /opt/  # SonarQube installation directory
     copy: no  # Do not keep a local copy of the archive
+  become: true
 
 # Move Java directory to a simpler path
 - name: Move directories from src to dest for java
@@ -52,6 +54,7 @@
   args:
     removes: /opt/jdk-17.0.2  # Remove the old folder after moving
     creates: /opt/jdk17  # Ensure the target folder exists
+  become: true
 
 # Move Maven directory to a simpler path
 - name: Move directory from src to dest for maven
@@ -59,6 +62,7 @@
   args:
     removes: /opt/apache-maven-3.8.8  # Remove the old folder
     creates: /opt/maven388  # Target folder after moving
+  become: true
 
 # Move SonarQube directory to a simpler path
 - name: Move directory from src to dest for Sonar
@@ -66,6 +70,7 @@
   args:
     removes: /opt/sonarqube-9.7.1.62043  # Remove the old folder
     creates: /opt/sonarqube971  # New folder after moving
+  become: true
 
 # Add environment variables for Java, Maven, and Sonar
 - name: Add environment variables to prepare the environment
