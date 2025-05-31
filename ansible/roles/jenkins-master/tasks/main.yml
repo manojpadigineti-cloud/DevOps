@@ -1,0 +1,3 @@
+- name: Install jenkins-master
+  import_tasks:
+  - install-jenkins.yml
