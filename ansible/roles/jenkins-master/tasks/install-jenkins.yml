@@ -7,6 +7,7 @@
 - name: Add repository
   ansible.builtin.yum_repository:
     name: jenkins
+    description: EPEL YUM repo
     baseurl: https://pkg.jenkins.io/redhat-stable/jenkins.repo
   become: true
 
