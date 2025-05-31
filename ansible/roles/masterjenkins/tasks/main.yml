@@ -1,2 +1,2 @@
-- name: Install jenkins_master
+- name: Install masterjenkins
   import_tasks: install-jenkins.yml

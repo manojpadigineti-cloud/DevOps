@@ -1,2 +1,0 @@
-- name: Install jenkins_slave components
-  import_tasks: jenkins_slave.yml

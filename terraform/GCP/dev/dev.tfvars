@@ -23,10 +23,10 @@ subnets = {
 }
 
 public_compute = {
-  jenkins_master = {
+  masterjenkins = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
     machine_type = "e2-standard-2"
-    vm_name = "jenkins_master"
+    vm_name = "masterjenkins"
     vpc_name = "i27ecommerce"
     zone = "us-central1-a"
   }
@@ -37,10 +37,10 @@ public_compute = {
     vpc_name = "i27ecommerce"
     zone = "us-central1-b"
   }
-  jenkins_slave = {
+  workerjenkins = {
     image_name = "projects/canvas-voltage-460913-r5/global/images/manoj-workstation"
     machine_type = "e2-standard-2"
-    vm_name = "jenkins_slave"
+    vm_name = "workerjenkins"
     vpc_name = "i27ecommerce"
     zone = "us-central1-c"
   }
