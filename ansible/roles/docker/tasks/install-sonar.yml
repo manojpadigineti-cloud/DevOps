@@ -1,7 +1,7 @@
 # Ensure the unzip package is installed
 - name: Install unzip package
   dnf:
-    name: unzip  # Install unzip package to handle compressed files
+    name: unzip  # Install unzip package to handle compressed templates
     state: present  # Ensure it’s installed
   become: true  # Run as root
 
@@ -103,7 +103,7 @@
     owner: sonar  # Set the owner to sonar
     group: sonar  # Set the group to sonar
     mode: 0775  # Set the appropriate permissions
-    recurse: true  # Apply recursively to all files and directories
+    recurse: true  # Apply recursively to all templates and directories
   become: true
   loop:
     - {perms: '/opt/sonarqube971', message: ownership_permissions_updated}
