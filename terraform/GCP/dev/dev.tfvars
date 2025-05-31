@@ -1,8 +1,23 @@
 vpc_networks = {
-  ecommerce = {
-    vpc_name = "ecommerce"
+  i27ecommerce = {
+    vpc_name = "i27ecommerce"
   }
-  banking = {
-    vpc_name = "ecommerce"
+}
+
+subnets = {
+  i27-subnet-1 = {
+    subnet_cidr = "10.1.0.0/16"
+    subnet_name = "i27-public-subnet-1"
+    subnet_region = "us-central1"
   }
+  i27-subnet-2 = {
+    subnet_cidr = "10.2.0.0/16"
+    subnet_name = "i27-private-subnet-2"
+    subnet_region = "us-central1"
+  }
+  i27-subnet-3 = {
+  subnet_cidr = "10.3.0.0/16"
+  subnet_name = "i27-private-subnet-3"
+  subnet_region = "us-central1"
+ }
 }

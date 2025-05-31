@@ -5,9 +5,6 @@ resource "google_compute_instance" "compute" {
 
   network_interface {
     network = var.vpc_name
-    access_config {
-      // Ephemeral public IP
-    }
   }
 
   boot_disk {
