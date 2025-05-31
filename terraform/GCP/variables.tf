@@ -22,12 +22,6 @@ variable "public_compute" {
   }))
 }
 
-variable "private_compute" {
-  type = map(object({
-    image_name = string
-    machine_type = string
-    vm_name = string
-    vpc_name = string
-    zone = string
-  }))
+variable "password" {
+  default = "Manoj@9999"
 }
