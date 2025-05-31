@@ -94,6 +94,7 @@
     echo 'export JAVA_HOME=/opt/jdk17/' >> /home/sonar/.bashrc
     echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /home/sonar/.bashrc
     source /home/sonar/.bashrc
+  become: true
   become_user: sonar
   args:
     executable: /bin/bash
