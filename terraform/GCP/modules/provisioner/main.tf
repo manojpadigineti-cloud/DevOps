@@ -9,7 +9,7 @@ resource "null_resource" "provisioner" {
   provisioner "remote-exec" {
       inline = [
         "git clone https://github.com/manojpadigineti-cloud/DevOps.git",
-        "cd /home/devops/DevOps/ansible",
+        "cd /home/devops/DevOps/ansible && git pull",
         "ansible-playbook -i localhost playbook.yml -e role=${var.run_server}"
     ]
   }
