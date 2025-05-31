@@ -93,12 +93,17 @@
   ansible.builtin.shell: |
     echo 'export JAVA_HOME=/opt/jdk17/' >> /home/sonar/.bashrc
     echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /home/sonar/.bashrc
-    source /home/sonar/.bashrc
   become: true
   become_user: sonar
   args:
     executable: /bin/bash
 
+- name: Source sonar .bashrc
+  ansible.builtin.shell: source /home/sonar/.bashrc
+  become: true
+  become_user: sonar
+  args:
+    executable: /bin/bash
 
 # Source /etc/profile to load environment variables in the current session
 - name: Source /etc/profile to load environment variables
