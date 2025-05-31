@@ -30,6 +30,7 @@
     src: https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
     dest: /opt/  # Destination where Java is installed
     copy: no  # Do not keep a local copy of the archive
+  become: true
 
 # Download and install Maven 3.8.8
 - name: Install and configure maven
