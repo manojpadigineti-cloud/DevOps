@@ -2,13 +2,16 @@
   ansible.builtin.rpm_key:
     state: present
     key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+  become: true
 
 - name: Add repository
   ansible.builtin.yum_repository:
     name: jenkins
     baseurl: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+  become: true
 
 - name: install "{{ dnf_modules }}"
   ansible.builtin.import_role:
     name: dnf-module
     tasks_from: main.yml
+  become: true
