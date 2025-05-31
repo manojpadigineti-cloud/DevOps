@@ -1,4 +1,5 @@
-- name: install Docker
+- name: Install Docker packages
   dnf:
     name: "{{ item }}"
-  loops: "{{ dnf_modules }}"
+    state: present
+  loop: "{{ dnf_modules }}"
