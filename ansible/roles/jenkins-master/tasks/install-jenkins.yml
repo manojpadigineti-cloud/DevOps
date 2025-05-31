@@ -7,8 +7,8 @@
 - name: Add repository
   ansible.builtin.yum_repository:
     name: jenkins
-    description: EPEL YUM repo
-    baseurl: https://pkg.jenkins.io/redhat/jenkins.repo
+    description: jenkins-stable
+    baseurl: http://pkg.jenkins.io/redhat-stable
   become: true
 
 - name: install "{{ dnf_modules }}"
