@@ -1,6 +1,6 @@
 # Ensure the unzip package is installed
 - name: Install unzip package
-  apt:
+  dnf:
     name: unzip  # Install unzip package to handle compressed files
     state: present  # Ensure it’s installed
   become: true  # Run as root
