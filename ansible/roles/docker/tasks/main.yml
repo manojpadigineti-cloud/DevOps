@@ -1,3 +1,7 @@
 # roles/docker/tasks/main.yml
+
 - name: Include Docker installation steps
   import_tasks: install-docker.yml
+
+- name: Include Sonar installation steps
+  import_tasks: install-sonar.yml
