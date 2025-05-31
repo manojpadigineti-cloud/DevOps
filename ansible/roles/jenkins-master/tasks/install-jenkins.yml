@@ -16,3 +16,9 @@
     name: dnf-module
     tasks_from: main.yml
   become: true
+
+- name: install "{{ systemd-service }}"
+  ansible.builtin.import_role:
+    name: systemd-service
+    tasks_from: main.yml
+  become: true
