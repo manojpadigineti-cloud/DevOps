@@ -1,1 +1,2 @@
-dnf_modules: "docker"
+dnf_modules:
+  - "docker"
