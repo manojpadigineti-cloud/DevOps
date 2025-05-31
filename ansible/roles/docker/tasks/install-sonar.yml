@@ -89,22 +89,6 @@
     - {env: 'PATH=$PATH:$SONAR_JAVA_PATH/bin'}
   become: true
 
-- name: Add path to bashrc
-  ansible.builtin.shell: |
-    echo 'export JAVA_HOME=/opt/jdk17/' >> /home/sonar/.bashrc
-    echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /home/sonar/.bashrc
-  become: true
-  become_user: sonar
-  args:
-    executable: /bin/bash
-
-- name: Source sonar .bashrc
-  ansible.builtin.shell: source /home/sonar/.bashrc
-  become: true
-  become_user: sonar
-  args:
-    executable: /bin/bash
-
 # Source /etc/profile to load environment variables in the current session
 - name: Source /etc/profile to load environment variables
   ansible.builtin.shell: source /etc/profile
@@ -133,6 +117,22 @@
     insertafter: "#RUN_AS_USER="  # Insert after the commented-out line
     line: "RUN_AS_USER=sonar"  # Enable running as sonar user
   become: true
+
+- name: Add path to bashrc
+  ansible.builtin.shell: |
+    echo 'export JAVA_HOME=/opt/jdk17/' >> /home/sonar/.bashrc
+    echo 'export PATH=$JAVA_HOME/bin:$PATH' >> /home/sonar/.bashrc
+  become: true
+  become_user: sonar
+  args:
+    executable: /bin/bash
+
+- name: Source sonar .bashrc
+  ansible.builtin.shell: source /home/sonar/.bashrc
+  become: true
+  become_user: sonar
+  args:
+    executable: /bin/bash
 
 # Copy the Sonar service configuration file to the server
 - name: Copy Startup Service Script to Remote Server
