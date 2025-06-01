@@ -1,2 +1,2 @@
 - name: Install workerjenkins components
-  import_tasks: workerjenkins.yml
+  import_tasks: jenkins-slave.yml
