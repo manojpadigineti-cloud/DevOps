@@ -28,13 +28,11 @@ variable "password" {
 }
 
 variable "firewalls" {
-  type = map(object({
-    firewall_name = string
+ type = map(object({
+   firewall_name = string
+    ports = list(string)
+    protocol = string
+    source_cidr_range = list(string)
     vpc_name = string
-    firewall_ports = map(object({
-       source_cidr_range = list(string)
-       protocol = string
-       ports = list(string)
-    }))
-  }))
+ }))
 }

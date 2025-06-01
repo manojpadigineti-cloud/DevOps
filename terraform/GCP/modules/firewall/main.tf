@@ -1,5 +1,4 @@
 resource "google_compute_firewall" "default" {
-  for_each = var.firewall_ports
   name    = var.firewall_name
   network = var.vpc_name
 
@@ -8,12 +7,14 @@ resource "google_compute_firewall" "default" {
   }
 
   allow {
-    protocol = each.value.protocol
-    ports    = each.value.ports
+    protocol = var.protocol
+    ports    = var.ports
   }
-
-  source_ranges = each.value.source_cidr_range
+  source_ranges = var.source_cidr_range
 }
+
+
+
 
 
 

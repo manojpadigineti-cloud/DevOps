@@ -51,15 +51,10 @@ public_compute = {
 
 firewalls = {
   firewallone = {
-    firewall_name = "i27ecommerce-fw"
-    vpc_name      = "i27ecommerce"
-    firewall_ports = {
-      ssh = {
-        source_cidr_range = ["0.0.0.0/0"]
-        protocol = "tcp"
-        ports = ["22"]
-      }
-    }
+    firewall_name = "i27firewall"
+    ports = ["80", "8080", "22", "9000"]
+    protocol = "tcp"
+    source_cidr_range = ["0.0.0.0/0"]
+    vpc_name = "i27ecommerce"
   }
-
 }

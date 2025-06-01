@@ -17,8 +17,10 @@ module "firewall" {
   for_each = var.firewalls
   source = "./modules/firewall"
   firewall_name     = each.value.firewall_name
+  ports             = each.value.ports
+  protocol          = each.value.protocol
+  source_cidr_range = each.value.source_cidr_range
   vpc_name          = each.value.vpc_name
-  firewall_ports = each.value.firewall_ports
 }
 
 module "tls_keys" {
