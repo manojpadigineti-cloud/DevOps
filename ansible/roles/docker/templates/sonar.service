@@ -7,6 +7,7 @@ Type=simple
 User=sonar
 Group=sonar
 PermissionsStartOnly=true
+Environment=SONAR_JAVA_PATH=/opt/jdk17/bin/java
 ExecStart=/opt/sonarqube971/bin/linux-x86-64/sonar.sh start
 ExecStop=/opt/sonarqube971/bin/linux-x86-64/sonar.sh stop
 ExecReload=/opt/sonarqube971/bin/linux-x86-64/sonar.sh restart
@@ -20,5 +21,3 @@ SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target
-
-
