@@ -14,13 +14,14 @@ module "subnets" {
 }
 
 module "firewall" {
+  depends_on = [module.vpc]
   for_each = var.firewalls
   source = "./modules/firewall"
   firewall_name     = each.value.firewall_name
   ports             = each.value.ports
   protocol          = each.value.protocol
   source_cidr_range = each.value.source_cidr_range
-  vpc_name          = each.value.vpc_name
+  vpc_name          = module.vpc[each.value.vpc_name].vpc_id
 }
 
 module "tls_keys" {
