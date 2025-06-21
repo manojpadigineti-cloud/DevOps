@@ -6,7 +6,7 @@ resource "google_sql_database_instance" "cloudsql" {
 
   settings {
     tier = var.tier
-    disk_size = 50
+    disk_size = 20
   }
 }
 
@@ -19,4 +19,5 @@ resource "google_sql_user" "dbuser" {
   name     = var.dbuser_name
   instance = google_sql_database_instance.cloudsql.id
   password = var.user_password
+  host = "%"
 }

@@ -57,6 +57,7 @@ module "provisioner" {
   ssh_password = var.password
 }
 
+//ALLOW NETWORK CONNECTIVITY IN CLOUDSQL
 module "cloudsql" {
   source = "./modules/cloudsql"
   cloudsql_name = var.cloudsql_name
