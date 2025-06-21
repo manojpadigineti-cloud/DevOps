@@ -3,6 +3,7 @@ resource "google_sql_database_instance" "cloudsql" {
   database_version = var.dbversion
   region           = var.region
   root_password = var.user_password
+  deletion_protection = false
 
   settings {
     tier = var.tier
