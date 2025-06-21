@@ -56,3 +56,14 @@ module "provisioner" {
   run_server   = each.value.vm_name
   ssh_password = var.password
 }
+
+module "cloudsql" {
+  source = "./modules/cloudsql"
+  cloudsql_name = var.cloudsql_name
+  databasename  = var.databasename
+  dbuser_name   = var.dbuser_name
+  dbversion     = var.dbversion
+  region        = var.region
+  tier          = var.tier
+  user_password = var.password
+}

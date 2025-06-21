@@ -36,3 +36,12 @@ variable "firewalls" {
     vpc_name = string
  }))
 }
+
+
+# Cloud SQL
+variable "cloudsql_name" {}
+variable "databasename" {}
+variable "dbuser_name" {}
+variable "dbversion" {}
+variable "region" {}
+variable "tier" {}

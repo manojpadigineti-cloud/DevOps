@@ -58,3 +58,10 @@ firewalls = {
     vpc_name = "i27ecommerce"
   }
 }
+
+cloudsql_name = "ecommerce"
+databasename = "product"
+dbuser_name = "product"
+dbversion = "MYSQL_8_0"
+region = "us-central1-c"
+tier = ""
