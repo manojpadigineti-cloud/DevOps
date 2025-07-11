@@ -37,6 +37,15 @@ variable "firewalls" {
  }))
 }
 
+variable "gke_cluster" {
+  type = map(object({
+    name   = string
+    nodepool_name = string
+    nodepool_region = string
+    region = string
+  }))
+}
+
 
 # Cloud SQL
 variable "cloudsql_name" {}

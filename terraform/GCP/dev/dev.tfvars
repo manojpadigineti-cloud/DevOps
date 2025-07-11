@@ -59,6 +59,15 @@ firewalls = {
   }
 }
 
+gke_cluster = {
+  i27-academy-gke={
+    name   =  "i27academy-cluster"
+    nodepool_name = "i27academy-cluster-np"
+    nodepool_region = "us-west1"
+    region = "us-west1"
+  }
+}
+
 cloudsql_name = "ecommerce"
 databasename = "product"
 dbuser_name = "product"

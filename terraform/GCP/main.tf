@@ -68,3 +68,12 @@ module "cloudsql" {
   tier          = var.tier
   user_password = var.password
 }
+
+module "gke" {
+  source = "./modules/gke"
+  for_each = var.gke_cluster
+  name   = each.value.name
+  nodepool_name = each.value.nodepool_name
+  nodepool_region = each.value.nodepool_region
+  region = each.value.region
+}
